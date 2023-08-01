@@ -1,0 +1,54 @@
+import express, { Request, Response, NextFunction } from 'express';
+import { json } from 'body-parser';
+import restaurantsRoutes from './routes/restaurant';
+import recommendationsRoutes from './routes/recommendation';
+import salesRoutes from './routes/sale';
+import loginRoutes from './routes/login';
+import refresh from './routes/refresh';
+import findPassword from './routes/findPassword';
+import changePassword from './routes/changePassword';
+import checkPassword from './routes/checkPassword';
+import logoutRoutes from './routes/logout';
+import mypageRoutes from './routes/mypage';
+import myReviews from './routes/myReviews';
+import myStore from './routes/myStore';
+import foodCategory from './routes/foodCat';
+import locationCategory from './routes/locCat';
+import locationTag from './routes/locTag';
+import recommendTag from './routes/recomTag';
+import email from './routes/email';
+import join from './routes/join';
+import menusRoutes from './routes/menu';
+import cors from 'cors';
+
+const app = express();
+const multer = require('multer');
+app.use(json());
+app.use(express.urlencoded({ extended: false }));
+app.use(multer().array());
+app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
+  res.status(500).json({ message: error.message });
+});
+
+app.use(cors());
+app.use('/restaurants', restaurantsRoutes);
+app.use('/menus', menusRoutes);
+app.use('/recommends', recommendationsRoutes);
+app.use('/sales', salesRoutes);
+app.use('/login', loginRoutes);
+app.use('/refresh', refresh);
+app.use('/find-pw', findPassword);
+app.use('/change-pw', changePassword);
+app.use('/check-pw', checkPassword);
+app.use('/logout', logoutRoutes);
+app.use('/mypage', mypageRoutes);
+app.use('/myreviews', myReviews);
+app.use('/mystore', myStore);
+app.use('/location-category', locationCategory);
+app.use('/location-tag', locationTag);
+app.use('/food-category', foodCategory);
+app.use('/recommend-tag', recommendTag);
+app.use('/join', join);
+app.use('/email-verification/send-code', email);
+
+app.listen(3004);

@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const mypage_1 = require("../controllers/mypage");
+const router = (0, express_1.Router)();
+router.get('/', mypage_1.getMypage);
+router.patch('/icon', mypage_1.updateIcon);
+router.patch('/nickname', mypage_1.updateNickname);
+router.patch('/location-category', mypage_1.updateLocationCategory);
+router.patch('/food-category', mypage_1.updateFoodCategory);
+exports.default = router;
