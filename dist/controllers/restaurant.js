@@ -25,10 +25,20 @@ const createRestaurant = (req, res, next) => {
 };
 exports.createRestaurant = createRestaurant;
 const getRestaurants = (req, res, next) => {
+    console.log(req.query);
     const locCat = req.query['location-category'];
+    const locTag = req.query['location-tag'];
+    const foodCat = req.query['food-category'];
+    const keyword = req.query.keyword;
+    const page = Number(req.query.page) - 1;
+    const rests = constants_1.RESTAURANTS.filter((rest) => rest.locationCategory === (locCat || rest.locationCategory))
+        .filter((rest) => rest.locationTag === (locTag || rest.locationTag))
+        .filter((rest) => rest.foodCategory === (foodCat || rest.foodCategory))
+        .filter((rest) => rest.restaurantName.includes(keyword || rest.restaurantName));
+    console.log(rests.length / 4, Math.ceil(rests.length / 4));
     res.json({
-        data: constants_1.RESTAURANTS.filter((rest) => rest.locationCategory === (locCat || rest.locationCategory)),
-        totalPages: 1,
+        data: rests.slice(4 * page, 4 * (page + 1)),
+        totalPages: Math.ceil(rests.length / 4),
     });
 };
 exports.getRestaurants = getRestaurants;
@@ -76,14 +86,38 @@ const updateMenu = (req, res, next) => {
 exports.updateMenu = updateMenu;
 const getReviews = (req, res, next) => {
     // const restId = Number(req.params.id);
-    res.json(constants_1.REVIEWS);
+    const page = Number(req.query.page) - 1;
+    const revs = [...constants_1.REVIEWS];
+    if (req.query.sort === 'likeCount')
+        revs.sort((a, b) => {
+            if (req.query.order === 'ascending')
+                return a.likeCount - b.likeCount;
+            return b.likeCount - a.likeCount;
+        });
+    else if (req.query.sort === 'rating')
+        revs.sort((a, b) => {
+            if (req.query.order === 'ascending')
+                return a.rating - b.rating;
+            return b.rating - a.rating;
+        });
+    // if(req.query.order === 'descending')
+    //   revs.sort()
+    console.log(revs.length / 3);
+    res.json({
+        data: revs.slice(3 * page, 3 * (page + 1)),
+        totalPages: Math.ceil(revs.length / 3),
+    });
 };
 exports.getReviews = getReviews;
 const createReview = (req, res, next) => {
     const content = req.body.reviewContent;
     const rating = Number(req.body.rating);
-    constants_1.REVIEWS.data.push({
-        id: constants_1.REVIEWS.data.length + 1,
+    constants_1.REVIEWS.push({
+        id: constants_1.REVIEWS.length + 1,
+        reviewId: constants_1.REVIEWS.length + 1,
+        restaurantId: 1,
+        restaurantName: '가츠벤또',
+        imageUrl: 'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/958321eb-9ce9-43e7-99e5-9fc03daa089e_IMG_3293.jpg',
         member: {
             id: 1,
             email: 'jp38@naver.com',
@@ -101,7 +135,7 @@ const createReview = (req, res, next) => {
 exports.createReview = createReview;
 const updateReview = (req, res, next) => {
     const id = Number(req.params.reviewId);
-    for (const review of constants_1.REVIEWS.data) {
+    for (const review of constants_1.REVIEWS) {
         if (review.id === id) {
             review.rating = Number(req.body.rating);
             review.reviewContent = req.body.reviewContent;
@@ -112,7 +146,13 @@ const updateReview = (req, res, next) => {
 exports.updateReview = updateReview;
 const deleteReview = (req, res, next) => {
     const id = Number(req.params.reviewId);
-    constants_1.REVIEWS.data = constants_1.REVIEWS.data.filter((review) => review.id !== id);
+    const revs = [...constants_1.REVIEWS.filter((review) => review.id !== id)];
+    while (constants_1.REVIEWS.length)
+        constants_1.REVIEWS.pop();
+    revs.forEach((rev) => {
+        constants_1.REVIEWS.push(rev);
+    });
+    // REVIEWS = REVIEWS.filter((review) => review.id !== id);
     // for (const review of REVIEWS.data) {
     //   if (review.id === id) {
     //     review.rating = Number(req.body.rating);
@@ -123,7 +163,7 @@ const deleteReview = (req, res, next) => {
 };
 exports.deleteReview = deleteReview;
 const likeReview = (req, res, next) => {
-    for (const review of constants_1.REVIEWS.data) {
+    for (const review of constants_1.REVIEWS) {
         if (review.id === Number(req.params.reviewId)) {
             review.liked = !review.liked;
         }

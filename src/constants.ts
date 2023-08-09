@@ -122,6 +122,97 @@ export const RESTAURANTS: Restaurant[] = [
     reviewCount: 4723,
     liked: false,
   },
+  {
+    id: 8,
+    restaurantName: 't8',
+    imageUrl: '',
+    latitude: 37.5533674,
+    longitude: 126.937563,
+    locationCategory: '서강대학교',
+    locationTag: '정문',
+    foodCategory: '일식',
+    rating: 4.7,
+    reviewCount: 343,
+    liked: true,
+  },
+  {
+    id: 9,
+    restaurantName: 't9',
+    imageUrl: '',
+    latitude: 37.5514818,
+    longitude: 126.9373166,
+    locationCategory: '신촌역',
+    locationTag: '정문',
+    foodCategory: '한식',
+    rating: 4.9,
+    reviewCount: 4723,
+    liked: false,
+  },
+  {
+    id: 10,
+    restaurantName: 't10',
+    imageUrl: '',
+    latitude: 37.5514818,
+    longitude: 126.9373166,
+    locationCategory: '대흥역',
+    locationTag: '정문',
+    foodCategory: '한식',
+    rating: 4.9,
+    reviewCount: 4723,
+    liked: true,
+  },
+  {
+    id: 11,
+    restaurantName: 't11',
+    imageUrl: '',
+    latitude: 37.5514818,
+    longitude: 126.9373166,
+    locationCategory: '신촌역',
+    locationTag: '정문',
+    foodCategory: '한식',
+    rating: 4.9,
+    reviewCount: 4723,
+    liked: false,
+  },
+  {
+    id: 12,
+    restaurantName: 't12',
+    imageUrl: '',
+    latitude: 37.5514818,
+    longitude: 126.9373166,
+    locationCategory: '서강대학교',
+    locationTag: '정문',
+    foodCategory: '한식',
+    rating: 4.9,
+    reviewCount: 4723,
+    liked: true,
+  },
+  {
+    id: 13,
+    restaurantName: 'test13',
+    imageUrl: '',
+    latitude: 37.5514818,
+    longitude: 126.9373166,
+    locationCategory: '대흥역',
+    locationTag: '정문',
+    foodCategory: '한식',
+    rating: 4.9,
+    reviewCount: 4723,
+    liked: true,
+  },
+  {
+    id: 14,
+    restaurantName: 't14',
+    imageUrl: '',
+    latitude: 37.5514818,
+    longitude: 126.9373166,
+    locationCategory: '서강대학교',
+    locationTag: '정문',
+    foodCategory: '한식',
+    rating: 4.9,
+    reviewCount: 4723,
+    liked: false,
+  },
 ];
 
 export const DETAILS = [
@@ -250,55 +341,196 @@ export const MENU_PHOTOS = [
       nickname: 'jongmi',
     },
   },
+  {
+    id: 4,
+    imageUrl:
+      'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/958321eb-9ce9-43e7-99e5-9fc03daa089e_IMG_3293.jpg',
+    member: {
+      id: 1,
+      nickname: 'jongmi',
+    },
+  },
+  {
+    id: 11,
+    imageUrl:
+      'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/4c9db490-1f44-4c40-92b8-f0b0bd0e6711_IMG_3293.jpg',
+    member: {
+      id: 2,
+      nickname: 'jongmi',
+    },
+  },
+  {
+    id: 1,
+    imageUrl:
+      'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/958321eb-9ce9-43e7-99e5-9fc03daa089e_IMG_3293.jpg',
+    member: {
+      id: 1,
+      nickname: 'jongmi',
+    },
+  },
+  {
+    id: 2,
+    imageUrl:
+      'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/4c9db490-1f44-4c40-92b8-f0b0bd0e6711_IMG_3293.jpg',
+    member: {
+      id: 2,
+      nickname: 'jongmi',
+    },
+  },
+  {
+    id: 100,
+    imageUrl:
+      'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/958321eb-9ce9-43e7-99e5-9fc03daa089e_IMG_3293.jpg',
+    member: {
+      id: 1,
+      nickname: 'jongmi',
+    },
+  },
+  {
+    id: 22,
+    imageUrl:
+      'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/4c9db490-1f44-4c40-92b8-f0b0bd0e6711_IMG_3293.jpg',
+    member: {
+      id: 2,
+      nickname: 'jongmi',
+    },
+  },
+  {
+    id: 172,
+    imageUrl:
+      'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/958321eb-9ce9-43e7-99e5-9fc03daa089e_IMG_3293.jpg',
+    member: {
+      id: 1,
+      nickname: 'jongmi',
+    },
+  },
+  // {
+  //   id: 24,
+  //   imageUrl:
+  //     'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/4c9db490-1f44-4c40-92b8-f0b0bd0e6711_IMG_3293.jpg',
+  //   member: {
+  //     id: 2,
+  //     nickname: 'jongmi',
+  //   },
+  // },
 ];
 
-export const REVIEWS = {
-  data: [
-    {
-      id: 1,
-      member: {
-        id: 2,
-        email: 'jp3869@naver.com',
-        nickname: 'jongmi',
-        icon: 'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/4c9db490-1f44-4c40-92b8-f0b0bd0e6711_IMG_3293.jpg',
-      },
-      reviewContent: '정말 정말 맛잇다!!',
-      rating: 4,
-      createdDate: '2023-03-24',
-      likeCount: 234,
-      liked: false,
-    },
-    {
+export const REVIEWS = [
+  {
+    id: 1,
+    reviewId: 1,
+    restaurantId: 1,
+    restaurantName: '가츠벤또',
+    imageUrl:
+      'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/958321eb-9ce9-43e7-99e5-9fc03daa089e_IMG_3293.jpg',
+    member: {
       id: 2,
-      member: {
-        id: 1,
-        email: 'jp38@naver.com',
-        nickname: 'jong',
-        icon: 'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/4c9db490-1f44-4c40-92b8-f0b0bd0e6711_IMG_3293.jpg',
-      },
-      reviewContent: '맛잇다!!',
-      rating: 2,
-      createdDate: '2023-03-24',
-      likeCount: 1,
-      liked: true,
+      email: 'jp3869@naver.com',
+      nickname: 'jongmi',
+      icon: 'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/4c9db490-1f44-4c40-92b8-f0b0bd0e6711_IMG_3293.jpg',
     },
-    {
-      id: 3,
-      member: {
-        id: 4,
-        email: 'jp69@naver.com',
-        nickname: 'mi',
-        icon: null,
-      },
-      reviewContent: '정말맛잇다!!',
-      rating: 3,
-      createdDate: '2023-03-24',
-      likeCount: 8237,
-      liked: false,
+    reviewContent: '정말 정말 맛잇다!!',
+    rating: 4,
+    createdDate: '2023-03-24',
+    likeCount: 234,
+    liked: false,
+  },
+  {
+    id: 2,
+    reviewId: 2,
+    restaurantId: 1,
+    restaurantName: '가츠벤또',
+    imageUrl:
+      'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/958321eb-9ce9-43e7-99e5-9fc03daa089e_IMG_3293.jpg',
+    member: {
+      id: 1,
+      email: 'jp38@naver.com',
+      nickname: 'jong',
+      icon: 'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/4c9db490-1f44-4c40-92b8-f0b0bd0e6711_IMG_3293.jpg',
     },
-  ],
-  totalPages: 1,
-};
+    reviewContent: '맛잇다!!',
+    rating: 2,
+    createdDate: '2023-03-24',
+    likeCount: 1,
+    liked: true,
+  },
+  {
+    id: 3,
+    reviewId: 3,
+    restaurantId: 1,
+    restaurantName: '가츠벤또',
+    imageUrl:
+      'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/958321eb-9ce9-43e7-99e5-9fc03daa089e_IMG_3293.jpg',
+    member: {
+      id: 4,
+      email: 'jp69@naver.com',
+      nickname: 'mi',
+      icon: null,
+    },
+    reviewContent: '정말맛잇다!!',
+    rating: 3,
+    createdDate: '2023-03-24',
+    likeCount: 8237,
+    liked: false,
+  },
+  {
+    id: 4,
+    reviewId: 4,
+    restaurantId: 1,
+    restaurantName: '가츠벤또',
+    imageUrl:
+      'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/958321eb-9ce9-43e7-99e5-9fc03daa089e_IMG_3293.jpg',
+    member: {
+      id: 2,
+      email: 'jp3869@naver.com',
+      nickname: 'jongmi',
+      icon: 'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/4c9db490-1f44-4c40-92b8-f0b0bd0e6711_IMG_3293.jpg',
+    },
+    reviewContent: '테스트4',
+    rating: 4,
+    createdDate: '2023-03-24',
+    likeCount: 123,
+    liked: false,
+  },
+  {
+    id: 5,
+    reviewId: 5,
+    restaurantId: 1,
+    restaurantName: '가츠벤또',
+    imageUrl:
+      'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/958321eb-9ce9-43e7-99e5-9fc03daa089e_IMG_3293.jpg',
+    member: {
+      id: 1,
+      email: 'jp38@naver.com',
+      nickname: 'jong',
+      icon: 'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/4c9db490-1f44-4c40-92b8-f0b0bd0e6711_IMG_3293.jpg',
+    },
+    reviewContent: '테스트5',
+    rating: 2,
+    createdDate: '2023-03-24',
+    likeCount: 4,
+    liked: true,
+  },
+  {
+    id: 6,
+    reviewId: 6,
+    restaurantId: 1,
+    restaurantName: '가츠벤또',
+    imageUrl:
+      'https://todays-lunch-bucket.s3.ap-northeast-2.amazonaws.com/menu/2023/03/24/958321eb-9ce9-43e7-99e5-9fc03daa089e_IMG_3293.jpg',
+    member: {
+      id: 4,
+      email: 'jp69@naver.com',
+      nickname: 'mi',
+      icon: null,
+    },
+    reviewContent: '테스트6',
+    rating: 3,
+    createdDate: '2023-03-24',
+    likeCount: 3549,
+    liked: false,
+  },
+];
 
 export const MY_REVIEWS = {
   data: [

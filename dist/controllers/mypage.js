@@ -55,7 +55,11 @@ const updateFoodCategory = (req, res) => {
 };
 exports.updateFoodCategory = updateFoodCategory;
 const getMyReviews = (req, res) => {
-    res.json(constants_1.MY_REVIEWS);
+    // res.json(MY_REVIEWS);
+    res.json({
+        data: constants_1.REVIEWS.filter((review) => review.member.id === 1),
+        totalPages: 1,
+    });
 };
 exports.getMyReviews = getMyReviews;
 const getMyStore = (req, res) => {

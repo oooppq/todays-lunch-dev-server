@@ -54,7 +54,11 @@ export const updateFoodCategory: RequestHandler = (req, res) => {
 };
 
 export const getMyReviews: RequestHandler = (req, res) => {
-  res.json(MY_REVIEWS);
+  // res.json(MY_REVIEWS);
+  res.json({
+    data: REVIEWS.filter((review) => review.member.id === 1),
+    totalPages: 1,
+  });
 };
 
 export const getMyStore: RequestHandler = (req, res) => {
