@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteMenuPhoto = exports.addMenuPhoto = exports.getMenuPhotos = void 0;
+exports.changeThumbPhoto = exports.deleteMenuPhoto = exports.addMenuPhoto = exports.getMenuPhotos = void 0;
 const constants_1 = require("../constants");
 // let MENU_PHOTOS = [
 //   {
@@ -47,3 +47,7 @@ const deleteMenuPhoto = (req, res) => {
     res.status(200).json();
 };
 exports.deleteMenuPhoto = deleteMenuPhoto;
+const changeThumbPhoto = (req, res) => {
+    res.status(200).json();
+};
+exports.changeThumbPhoto = changeThumbPhoto;

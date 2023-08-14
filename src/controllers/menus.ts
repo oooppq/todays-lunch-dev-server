@@ -45,3 +45,7 @@ export const deleteMenuPhoto: RequestHandler = (req, res) => {
   // MENU_PHOTOS = MENU_PHOTOS.filter((photo) => photo.id !== id);
   res.status(200).json();
 };
+
+export const changeThumbPhoto: RequestHandler = (req, res) => {
+  res.status(200).json();
+};
